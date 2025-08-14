@@ -1,0 +1,102 @@
+.waveCards {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.waveCard {
+    position: relative;
+    flex: 0 1 calc(25% - 1rem);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    min-width: 160px;
+    /* 可适当调小 */
+}
+
+.waveCard .waveCardImg {
+    position: absolute;
+    inset: 0;
+    background-color: rgb(11, 95, 67);
+}
+
+.waveCard .waveCardImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.waveCard .waveCont {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    background-color: transparent;
+}
+
+
+.infoBox {
+    position: relative;
+    text-align: center;
+    background-color: #2e53aa;
+    text-align: center;
+    min-height: 10vh;
+    color: #eee;
+    top: -18px;
+    height: 200px;
+}
+
+.infoBox h3 {
+    position: relative;
+    text-align: center;
+    font-size: 1.25rem;
+    top: 0.5em;
+}
+
+.editorial {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    top: 0px;
+}
+
+::selection {
+    background-color: rgb(38, 38, 38);
+    color: white;
+}
+
+.parallax>use {
+    animation: move-forever 12s linear infinite;
+}
+
+.parallax>use:nth-child(1) {
+    animation-delay: -2s;
+}
+
+.parallax>use:nth-child(2) {
+    animation-delay: -2s;
+    animation-duration: 5s;
+}
+
+.parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 3s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate(-90px, 0%);
+    }
+
+    100% {
+        transform: translate(85px, 0%);
+    }
+}

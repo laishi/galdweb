@@ -1,0 +1,188 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-auto-rows: 15rem;
+  gap: 1em;
+  grid-auto-flow: dense;
+  margin: 0 auto;
+}
+
+
+.grid--big-columns {
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+
+.grid--big-gap {
+  grid-gap: 1em;
+}
+
+
+.card {
+  position: relative;
+  /* aspect-ratio: 1920/1190; */
+  top: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: black;  
+  will-change: transform;
+}
+
+
+
+.card--expanded {
+  grid-column: span 3;
+  grid-row: span 3;
+  border-radius: 10px;
+  transition: border-radius 0s;
+  /* will-change: transform, box-shadow; */
+}
+
+
+
+@media (max-width: 1280px) {
+  .card--expanded {
+    grid-column: span 3;
+    grid-row: span 2;
+  }
+}
+
+@media (max-width: 1024px) {
+  .card--expanded {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-auto-rows: 12rem;
+  }
+  .card--expanded {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+.girdImgs {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.girdImgs .cardSlider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.girdImgs .cardSlider::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  will-change: opacity;
+}
+
+.girdImgs .cardText {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.girdImgs .cardText h3 {
+  color: aliceblue;
+  opacity: 0.5;
+  font-size: 1em;
+  line-height: 2em;
+  font-weight: 100;
+  text-align: center;
+}
+
+.girdImgs .cardSlider .cardImg {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  will-change: transform, opacity;
+}
+
+.girdImgs .cardSlider .cardImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card:hover {
+  border: 1px solid var(--menu-bg-lighter);
+}
+
+.card:hover .cardImg {
+  transform: scale(1.2);
+}
+
+.card:hover .cardSlider::after {
+  opacity: 0;
+}
+
+.card:hover .imgDots {
+  bottom: 0em;
+}
+
+.girdImgs .imgDots {
+  position: absolute;
+  width: 100%;
+  height: 5em;
+  bottom: -2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: bottom 0.3s ease;
+  will-change: bottom;
+}
+
+.girdImgs .imgDots .imgDot {
+  position: relative;
+  width: 3em;
+  height: 3em;
+  margin: 0 3px;
+  border-radius: 100%;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.girdImgs .imgDots .imgDot img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imgDot:hover {
+  border: 1px solid var(--menu-bg-lighter);
+}
+
+.card--expanded .imgDot {
+  width: 50px;
+  height: 50px;
+}
+
+.card--expanded .imgDots {
+  height: 55px;
+  bottom: 25px;
+}
