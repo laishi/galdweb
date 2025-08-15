@@ -143,11 +143,13 @@ class CurveHeader {
         this.curveLength = this.curvePath.getTotalLength();
 
 
-        if (Math.abs(curveHeight - sideHeight) > 50) {
-            this.mainTitle.style.top = `${sideHeight - 50}px`;
-            this.mainTitle.style.opacity = 1;
-        } else {
-            this.mainTitle.style.opacity = 0;
+        if (this.mainTitle) {
+            if (Math.abs(curveHeight - sideHeight) > 50) {
+                this.mainTitle.style.top = `${sideHeight - 50}px`;
+                this.mainTitle.style.opacity = 1;
+            } else {
+                this.mainTitle.style.opacity = 0;
+            }
         }
 
         this.updateFun(ww, curveHeight, yScroll);
@@ -159,8 +161,6 @@ class CurveHeader {
         this.headerImgPose();
         this.headerMask();
     }
-
-
 
 
     remap(value, inMin, inMax, outMin, outMax) {

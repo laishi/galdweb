@@ -47,18 +47,33 @@ class PagesManager {
 
 
   keywordAnimationCycle(curentPage = this.pageDown) {
-    const allLinks = this.pages.querySelectorAll(".keywordsBtn a");
-    allLinks.forEach(link => link.classList.remove("animate-border"));
+    const allLinks = this.pages?.querySelectorAll(".keywordsBtn a") || [];
+    allLinks.forEach(link => link.classList?.remove("animate-border"));
 
-    const links = curentPage.querySelectorAll(".keywordsBtn a");
+    const links = curentPage?.querySelectorAll(".keywordsBtn a") || [];
+    if (links.length === 0) return;
+
     let currentIndex = 0;
-    setInterval(() => {
-      links.forEach(link => link.classList.remove("animate-border"));
-      links[currentIndex].classList.add("animate-border");
+    const intervalId = setInterval(() => {
+      if (!links || links.length === 0) {
+        clearInterval(intervalId);
+        return;
+      }
+
+      links.forEach(link => {
+        link?.classList?.remove("animate-border");
+      });
+
+      const currentLink = links[currentIndex];
+      if (currentLink?.classList) {
+        currentLink.classList.add("animate-border");
+      }
+
       currentIndex = (currentIndex + 1) % links.length;
     }, 2500);
-  }
 
+    return () => clearInterval(intervalId);
+  }
 
 
   navToPage() {

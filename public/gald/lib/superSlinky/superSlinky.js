@@ -39,15 +39,15 @@ class SlinkyManager {
 
     initSections() {
         this.sections = this.sections.map((section, i) => {
-            const h1 = section.querySelector('h1');
-            const progress = h1.querySelector('.progress');
+            const h3 = section.querySelector('h3');
+            const progress = h3.querySelector('.progress');
             const height = section.offsetHeight;
             const topLatch = i * 42;
             const top = this.getTop(section);
-            h1.onclick = () => this.smoothScroll(top - topLatch);
+            h3.onclick = () => this.smoothScroll(top - topLatch);
             return {
                 el: section,
-                header: h1,
+                header: h3,
                 progress,
                 top,
                 height,

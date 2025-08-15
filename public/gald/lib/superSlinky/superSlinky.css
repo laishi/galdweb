@@ -9,7 +9,7 @@
     overflow: hidden;
 }
 
-.gald-article .gald-section h1 {
+.gald-article .gald-section h3 {
     position: relative;
     height: 42px;
     width: 480px;
@@ -22,7 +22,7 @@
     cursor: pointer;
 }
 
-.gald-article .gald-section h1 .progress {
+.gald-article .gald-section h3 .progress {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -30,7 +30,7 @@
     background: rgba(255, 255, 255, 0.2);
 }
 
-.gald-article .gald-section h1 .text {
+.gald-article .gald-section h3 .text {
     position: relative;
 }
 

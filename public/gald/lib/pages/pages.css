@@ -63,6 +63,7 @@
 }
 
 .pages .pageHeader .pageLogo {
+  position: relative;
   width: 168px;
   height: auto;
   display: flex;
@@ -71,6 +72,10 @@
   align-items: center;
   opacity: 1;
   margin: 0 auto;
+}
+
+.pages .pageHeader .pageText {
+  margin-bottom: 3em;
 }
 
 .pages .pageHeader .pageLogo img {
