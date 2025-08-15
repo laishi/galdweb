@@ -19,6 +19,15 @@
   /* background-color: rgb(51, 6, 6); */
 }
 
+.pages .alighting{
+  color: var(--menu-bg-darker);  
+}
+
+
+.pages .alighting:hover{
+  color: var(--menu-bg-lighter);  
+}
+
 
 .pages .page {
   position: absolute;
