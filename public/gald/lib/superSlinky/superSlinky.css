@@ -20,6 +20,13 @@
     background: var(--menu-bg-darker);
     color: var(--text-white);
     cursor: pointer;
+    z-index: 1;
+}
+
+.gald-article .gald-section img {
+    position: relative;
+    width: 100%;
+    z-index: 0;
 }
 
 .gald-article .gald-section h3 .progress {

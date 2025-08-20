@@ -122,10 +122,10 @@ class SlinkyManager {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+window.onload = function() {
     new SlinkyManager({
         article: document.querySelector('.gald-article'),
         sectionSelector: '.gald-section',
         sectionHeight: 42
     });
-});
+};
