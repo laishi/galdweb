@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>重庆企业数据文件下载 | 平安张勇团队</title>
+  <title>重庆企业数据下载 | 平安张勇团队</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <style>
@@ -89,26 +89,29 @@
       padding: 20px;
     }
 
+    /* 🔹 Header 简化布局 */
     .header {
       text-align: center;
-      padding: 40px 20px 50px;
+      padding: 30px 20px 40px;
       position: relative;
     }
 
-    /* 🔹 精简版 Logo 文字容器 */
-    .logo-text {
+    .logo-wrapper {
       display: inline-block;
-      font-weight: 800;
-      font-size: 1.3rem;
-      background: linear-gradient(90deg, #fff, #a5b4fc, #fff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-size: 200% auto;
-      animation: textShine 3s linear infinite;
-      padding: 8px 20px;
-      margin-bottom: 16px;
-      letter-spacing: 1px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 20px 30px;
+      margin: 0 auto 20px;
+      box-shadow: var(--glass-shadow), var(--primary-glow);
       animation: slideDown 0.6s ease-out;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .logo-wrapper:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.35), 0 0 30px rgba(102,126,234,0.8);
     }
 
     @keyframes slideDown {
@@ -116,36 +119,17 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes textShine {
-      to { background-position: 200% center; }
+    /* 🔹 Logo 高度 250px */
+    .logo-wrapper img {
+      height: 250px;
+      width: auto;
+      display: block;
+      border-radius: 12px;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25));
+      transition: transform 0.3s;
     }
-
-    /* 🔹 超大标题：font-size 2.5rem ≈ 40px，如需 250px 请改为 250px */
-    .header h1 {
-      font-size: 2.5rem;  /* 🔹 如需 250px 超大字体，请改为: font-size: 250px; */
-      font-weight: 900;
-      margin: 10px 0 12px;
-      background: linear-gradient(135deg, #fff 0%, #c7d2fe 30%, #a5b4fc 60%, #fff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-size: 300% 300%;
-      animation: textShine 8s ease infinite;
-      text-shadow: 0 4px 30px rgba(0,0,0,0.4);
-      animation: slideUp 0.6s ease-out 0.2s both, textShine 8s ease infinite;
-      line-height: 1.2;
-    }
-
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .header .subtitle {
-      font-size: 1.15rem;
-      opacity: 0.95;
-      margin-bottom: 10px;
-      font-weight: 400;
-      animation: fadeIn 0.6s ease-out 0.4s both;
+    .logo-wrapper:hover img {
+      transform: scale(1.02);
     }
 
     .header .team-badge {
@@ -156,16 +140,16 @@
       border: 1px solid rgba(165,180,252,0.4);
       padding: 10px 24px;
       border-radius: 30px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      margin-top: 20px;
-      box-shadow: 0 6px 20px rgba(102,126,234,0.35);
-      animation: pulse 3s ease-in-out infinite, fadeIn 0.6s ease-out 0.6s both;
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-top: 10px;
+      box-shadow: 0 4px 16px rgba(102,126,234,0.3);
+      animation: pulse 3s ease-in-out infinite, fadeIn 0.6s ease-out 0.3s both;
     }
 
     @keyframes pulse {
-      0%, 100% { box-shadow: 0 6px 20px rgba(102,126,234,0.35); }
-      50% { box-shadow: 0 8px 30px rgba(102,126,234,0.6); }
+      0%, 100% { box-shadow: 0 4px 16px rgba(102,126,234,0.3); }
+      50% { box-shadow: 0 6px 24px rgba(102,126,234,0.5); }
     }
 
     @keyframes fadeIn {
@@ -177,9 +161,9 @@
       display: flex;
       justify-content: center;
       gap: 10px;
-      margin: 25px 0 35px;
+      margin: 15px 0 30px;
       flex-wrap: wrap;
-      animation: fadeIn 0.6s ease-out 0.8s both;
+      animation: fadeIn 0.6s ease-out 0.5s both;
     }
 
     .filter-btn {
@@ -417,8 +401,8 @@
     }
 
     @media (max-width: 768px) {
-      .header h1 { font-size: 2rem; }  /* 手机端适当缩小 */
-      .header .subtitle { font-size: 1rem; }
+      .logo-wrapper { padding: 15px 20px; }
+      .logo-wrapper img { height: 200px; }
       .card-grid { grid-template-columns: 1fr; }
       .card { max-width: 420px; margin: 0 auto; }
       .filter-tabs { gap: 8px; }
@@ -426,8 +410,7 @@
     }
 
     @media (max-width: 480px) {
-      .header h1 { font-size: 1.8rem; }
-      .logo-text { font-size: 1.1rem; padding: 6px 16px; }
+      .logo-wrapper img { height: 160px; }
       .card { padding: 18px 16px; }
       .card-title { font-size: 1.05rem; }
     }
@@ -450,19 +433,19 @@
   <div class="glow-orb"></div>
 
   <div class="container">
+    <!-- 🔹 简化 Header：仅大尺寸 Logo + 团队徽章 -->
     <header class="header">
-      <!-- 🔹 精简文字 Logo（已移除图片） -->
-      <div class="logo-text">🛡️ 中国平安</div>
+      <div class="logo-wrapper">
+        <img src="./Ping_An_Chinese_Logo.png" alt="中国平安" />
+      </div>
       
-      <!-- 🔹 超大标题：font-size: 2.5rem (约40px)，如需250px请改为 250px -->
-      <h1>✨ 重庆企业数据智能下载中心</h1>
-      <p class="subtitle">🎯 主城区精准筛选 · 📱 手机号实名认证 · ⚡ 一键极速获取</p>
       <div class="team-badge">
-        <span>🔐</span>
+        <span>🛡️</span>
         <span>重庆平安 · 张勇团队专属服务</span>
       </div>
     </header>
 
+    <!-- 🔹 分类筛选 -->
     <div class="filter-tabs">
       <button class="filter-btn active" data-filter="all">
         <span class="dot"></span> 全部
@@ -478,6 +461,7 @@
       </button>
     </div>
 
+    <!-- 🔹 毛玻璃卡片网格 -->
     <div class="card-grid" id="cardGrid">
       <!-- 汇总 -->
       <a class="card" data-category="汇总" href="https://www.galdweb.cloud/pingan/科技-主城区_汇总统计.txt" target="_blank">
@@ -683,6 +667,7 @@
       </a>
     </div>
 
+    <!-- 🔹 页脚 -->
     <footer class="footer">
       <div class="footer-contact">
         <span>📞</span>
@@ -694,7 +679,7 @@
   </div>
 
   <script>
-    // 分类筛选功能
+    // 分类筛选
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', function() {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -705,7 +690,6 @@
         
         cards.forEach((card, index) => {
           const category = card.dataset.category;
-          
           if (filter === 'all' || category === filter) {
             card.style.display = 'flex';
             setTimeout(() => {
@@ -715,15 +699,13 @@
           } else {
             card.style.opacity = '0';
             card.style.transform = 'scale(0.95) translateY(10px)';
-            setTimeout(() => {
-              card.style.display = 'none';
-            }, 300);
+            setTimeout(() => { card.style.display = 'none'; }, 300);
           }
         });
       });
     });
 
-    // 卡片点击波纹效果
+    // 点击波纹
     document.querySelectorAll('.card').forEach(card => {
       card.addEventListener('click', function(e) {
         const ripple = document.createElement('span');
@@ -731,31 +713,14 @@
         const size = Math.max(rect.width, rect.height);
         const x = e.clientX - rect.left - size / 2;
         const y = e.clientY - rect.top - size / 2;
-        
-        ripple.style.cssText = `
-          position: absolute;
-          width: ${size}px;
-          height: ${size}px;
-          left: ${x}px;
-          top: ${y}px;
-          border-radius: 50%;
-          background: rgba(255,255,255,0.3);
-          transform: scale(0);
-          animation: ripple 0.6s ease-out;
-          pointer-events: none;
-        `;
-        
+        ripple.style.cssText = `position:absolute;width:${size}px;height:${size}px;left:${x}px;top:${y}px;border-radius:50%;background:rgba(255,255,255,0.3);transform:scale(0);animation:ripple 0.6s ease-out;pointer-events:none;`;
         this.appendChild(ripple);
         setTimeout(() => ripple.remove(), 600);
       });
     });
 
     const style = document.createElement('style');
-    style.textContent = `
-      @keyframes ripple {
-        to { transform: scale(4); opacity: 0; }
-      }
-    `;
+    style.textContent = `@keyframes ripple { to { transform:scale(4); opacity:0; } }`;
     document.head.appendChild(style);
 
     // 滚动渐入
@@ -767,10 +732,7 @@
         }
       });
     }, { threshold: 0.1 });
-
-    document.querySelectorAll('.card').forEach(card => {
-      observer.observe(card);
-    });
+    document.querySelectorAll('.card').forEach(card => observer.observe(card));
   </script>
 </body>
 </html>
