@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>数据文件下载</title>
+  <title>重庆企业数据文件下载</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -19,7 +19,20 @@
     .header {
       text-align: center;
       color: #fff;
-      padding: 30px 20px;
+      padding: 20px 20px 30px;
+    }
+    .logo {
+      display: inline-block;
+      margin-bottom: 16px;
+      background: #fff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .logo img {
+      height: 40px;
+      width: auto;
+      display: block;
     }
     .header h1 {
       font-size: 1.8rem;
@@ -27,8 +40,15 @@
       text-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
     .header p {
-      opacity: 0.9;
+      opacity: 0.95;
       font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+    .header .team {
+      font-weight: 600;
+      opacity: 1;
+      font-size: 1rem;
+      margin-top: 8px;
     }
     .card-grid {
       display: flex;
@@ -67,6 +87,7 @@
     }
     .card-tag.科技 { background: #e0f2fe; color: #0284c7; }
     .card-tag.装饰 { background: #fef3c7; color: #b45309; }
+    .card-tag.汇总 { background: #ede9fe; color: #6d28d9; }
     .card-title {
       font-size: 1rem;
       font-weight: 600;
@@ -93,26 +114,40 @@
     }
     .footer {
       text-align: center;
-      color: rgba(255,255,255,0.85);
-      padding: 30px 20px;
+      color: rgba(255,255,255,0.9);
+      padding: 25px 20px 40px;
       font-size: 0.9rem;
+    }
+    .footer .team-sign {
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-top: 6px;
     }
     @media (max-width: 640px) {
       .card { width: 100%; max-width: 340px; }
       .header h1 { font-size: 1.4rem; }
+      .logo img { height: 36px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>📁 重庆企业数据文件下载</h1>
+      <!-- 🔹 Logo -->
+      <div class="logo">
+        <img src="//pa18-pweb.pingan.com/upload/chnapp/pc/uploads/img/category/2024/04/19/17135084414568.gif" alt="中国平安" />
+      </div>
+      
+      <!-- 🔹 标题文案 -->
+      <h1>重庆企业数据文件下载</h1>
       <p>点击卡片直接下载 · 主城区 · 手机号筛选</p>
+      <p class="team">重庆平安 - 张勇团队</p>
     </div>
 
     <div class="card-grid">
+      <!-- 🔹 汇总卡片 -->
       <a class="card" href="https://www.galdweb.cloud/gs/科技-主城区_汇总统计.txt" target="_blank">
-        <span class="card-tag 科技">📊 汇总</span>
+        <span class="card-tag 汇总">📊 汇总</span>
         <div class="card-title">科技 - 主城区_汇总统计</div>
         <div class="card-meta">📄 统计文件 <span class="card-count">9 区</span><span class="card-arrow">→</span></div>
       </a>
@@ -184,7 +219,7 @@
       </a>
 
       <a class="card" href="https://www.galdweb.cloud/gs/装饰-主城区_汇总统计.txt" target="_blank">
-        <span class="card-tag 装饰">📊 汇总</span>
+        <span class="card-tag 汇总">📊 汇总</span>
         <div class="card-title">装饰 - 主城区_汇总统计</div>
         <div class="card-meta">📄 统计文件 <span class="card-count">9 区</span><span class="card-arrow">→</span></div>
       </a>
@@ -234,7 +269,8 @@
 
     <div class="footer">
       <p>数据接口：刘建 13640566324</p>
-      <p style="margin-top:6px;opacity:0.8">© 2026 重庆企业数据服务</p>
+      <p class="team-sign">重庆平安 - 张勇团队</p>
+      <p style="margin-top:10px;opacity:0.85;font-size:0.85rem">© 2026 企业数据服务</p>
     </div>
   </div>
 </body>
