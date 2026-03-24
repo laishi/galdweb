@@ -31,10 +31,8 @@
     }
 
     .bg-particles {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      pointer-events: none;
-      z-index: 0;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 0;
       background-image: 
         radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.15), transparent),
         radial-gradient(2px 2px at 40px 70px, rgba(102,126,234,0.2), transparent),
@@ -48,19 +46,15 @@
       0%, 100% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
     }
-
     @keyframes float {
       0% { transform: translateY(0); }
       100% { transform: translateY(-200px); }
     }
 
     .glow-orb {
-      position: fixed;
-      width: 600px; height: 600px;
-      border-radius: 50%;
+      position: fixed; width: 600px; height: 600px; border-radius: 50%;
       background: radial-gradient(circle, rgba(102,126,234,0.15) 0%, transparent 70%);
-      filter: blur(60px);
-      z-index: 0;
+      filter: blur(60px); z-index: 0;
       animation: orbFloat 25s ease-in-out infinite;
     }
     .glow-orb:nth-child(2) {
@@ -69,12 +63,10 @@
       animation-delay: -12s;
     }
     .glow-orb:nth-child(3) {
-      left: 30%; top: 40%;
-      width: 400px; height: 400px;
+      left: 30%; top: 40%; width: 400px; height: 400px;
       background: radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%);
       animation-delay: -6s;
     }
-
     @keyframes orbFloat {
       0%, 100% { transform: translate(0, 0) scale(1); }
       33% { transform: translate(30px, -20px) scale(1.05); }
@@ -82,56 +74,37 @@
     }
 
     .container {
-      position: relative;
-      z-index: 1;
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 20px;
+      position: relative; z-index: 1;
+      max-width: 1400px; margin: 0 auto; padding: 20px;
     }
 
-    /* 🔹 Header 简化布局 */
+    /* 🔹 Header 简化：无外框 + 居中 */
     .header {
       text-align: center;
-      padding: 30px 20px 40px;
+      padding: 25px 20px 35px;
       position: relative;
     }
 
-    .logo-wrapper {
-      display: inline-block;
-      background: var(--glass-bg);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      padding: 20px 30px;
-      margin: 0 auto 20px;
-      box-shadow: var(--glass-shadow), var(--primary-glow);
+    /* 🔹 Logo 无外框 + 最大高度 250px + 居中 */
+    .header .logo {
+      display: block;
+      max-height: 250px;
+      width: auto;
+      margin: 0 auto;
+      border-radius: 8px;
+      filter: drop-shadow(0 4px 16px rgba(0,0,0,0.3));
+      transition: transform 0.3s ease;
       animation: slideDown 0.6s ease-out;
-      transition: transform 0.3s, box-shadow 0.3s;
     }
-    .logo-wrapper:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.35), 0 0 30px rgba(102,126,234,0.8);
+    .header .logo:hover {
+      transform: scale(1.02);
     }
-
     @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-20px); }
+      from { opacity: 0; transform: translateY(-15px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* 🔹 Logo 高度 250px */
-    .logo-wrapper img {
-      height: 250px;
-      width: auto;
-      display: block;
-      border-radius: 12px;
-      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25));
-      transition: transform 0.3s;
-    }
-    .logo-wrapper:hover img {
-      transform: scale(1.02);
-    }
-
+    /* 🔹 团队徽章 - 居中 */
     .header .team-badge {
       display: inline-flex;
       align-items: center;
@@ -142,95 +115,65 @@
       border-radius: 30px;
       font-weight: 600;
       font-size: 1.05rem;
-      margin-top: 10px;
+      margin: 12px auto 0;  /* 🔹 居中 key */
       box-shadow: 0 4px 16px rgba(102,126,234,0.3);
       animation: pulse 3s ease-in-out infinite, fadeIn 0.6s ease-out 0.3s both;
     }
-
     @keyframes pulse {
       0%, 100% { box-shadow: 0 4px 16px rgba(102,126,234,0.3); }
       50% { box-shadow: 0 6px 24px rgba(102,126,234,0.5); }
     }
-
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from { opacity: 0; } to { opacity: 1; }
     }
 
+    /* 🔹 筛选 Tab */
     .filter-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin: 15px 0 30px;
-      flex-wrap: wrap;
+      display: flex; justify-content: center; gap: 10px;
+      margin: 15px 0 30px; flex-wrap: wrap;
       animation: fadeIn 0.6s ease-out 0.5s both;
     }
-
     .filter-btn {
-      padding: 10px 22px;
-      border: none;
-      border-radius: 28px;
-      background: var(--glass-bg);
-      backdrop-filter: blur(10px);
+      padding: 10px 22px; border: none; border-radius: 28px;
+      background: var(--glass-bg); backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border: 1px solid var(--glass-border);
-      color: #fff;
-      font-size: 0.95rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      color: #fff; font-size: 0.95rem; font-weight: 500;
+      cursor: pointer; transition: all 0.3s ease;
+      display: flex; align-items: center; gap: 6px;
     }
-
     .filter-btn:hover, .filter-btn.active {
       background: rgba(255,255,255,0.25);
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(0,0,0,0.25);
     }
-
     .filter-btn.active {
       border-color: rgba(165,180,252,0.7);
       box-shadow: 0 0 0 2px rgba(102,126,234,0.4), 0 6px 20px rgba(0,0,0,0.25);
     }
-
-    .filter-btn .dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: currentColor;
-    }
+    .filter-btn .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
     .filter-btn[data-filter="all"] { color: #fff; }
     .filter-btn[data-filter="科技"] { color: var(--tech-color); }
     .filter-btn[data-filter="装饰"] { color: var(--decor-color); }
     .filter-btn[data-filter="汇总"] { color: var(--summary-color); }
 
+    /* 🔹 卡片网格 */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-      gap: 20px;
-      padding: 10px 5px 30px;
+      gap: 20px; padding: 10px 5px 30px;
     }
-
     .card {
       background: var(--glass-bg);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      padding: 20px;
-      text-decoration: none;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
+      border-radius: 20px; padding: 20px;
+      text-decoration: none; color: #fff;
+      display: flex; flex-direction: column; gap: 14px;
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      position: relative;
-      overflow: hidden;
-      animation: cardPop 0.5s ease-out both;
-      opacity: 0;
+      position: relative; overflow: hidden;
+      animation: cardPop 0.5s ease-out both; opacity: 0;
     }
-
     .card:nth-child(1) { animation-delay: 0.1s; }
     .card:nth-child(2) { animation-delay: 0.15s; }
     .card:nth-child(3) { animation-delay: 0.2s; }
@@ -242,175 +185,111 @@
     .card:nth-child(9) { animation-delay: 0.5s; }
     .card:nth-child(10){ animation-delay: 0.55s; }
     .card:nth-child(n+11) { animation-delay: 0.6s; opacity: 1; animation: none; }
-
     @keyframes cardPop {
       from { opacity: 0; transform: scale(0.95) translateY(15px); }
       to { opacity: 1; transform: scale(1) translateY(0); }
     }
-
     .card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: -100%;
+      content: ''; position: absolute; top: 0; left: -100%;
       width: 100%; height: 100%;
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
-      transition: left 0.6s ease;
-      pointer-events: none;
+      transition: left 0.6s ease; pointer-events: none;
     }
-
-    .card:hover::before {
-      left: 100%;
-    }
-
+    .card:hover::before { left: 100%; }
     .card:hover {
       transform: translateY(-8px) scale(1.02);
       border-color: rgba(165,180,252,0.6);
-      box-shadow: 
-        0 20px 50px rgba(0,0,0,0.4),
-        0 0 0 1px rgba(165,180,252,0.3),
-        0 0 40px rgba(102,126,234,0.35);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 0 1px rgba(165,180,252,0.3), 0 0 40px rgba(102,126,234,0.35);
       z-index: 10;
     }
-
     .card-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      padding: 6px 14px;
-      border-radius: 24px;
-      width: fit-content;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      position: relative;
-      overflow: hidden;
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 0.82rem; font-weight: 700;
+      padding: 6px 14px; border-radius: 24px; width: fit-content;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      position: relative; overflow: hidden;
     }
-
     .card-tag::after {
-      content: '';
-      position: absolute;
-      inset: 0;
+      content: ''; position: absolute; inset: 0;
       background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
-      opacity: 0;
-      transition: opacity 0.3s;
+      opacity: 0; transition: opacity 0.3s;
     }
     .card-tag:hover::after { opacity: 1; }
-
     .card-tag.科技 {
       background: linear-gradient(135deg, rgba(6,182,212,0.25), rgba(6,182,212,0.15));
-      color: #67e8f9;
-      border: 1px solid rgba(6,182,212,0.4);
+      color: #67e8f9; border: 1px solid rgba(6,182,212,0.4);
       box-shadow: 0 0 15px rgba(6,182,212,0.25);
     }
     .card-tag.装饰 {
       background: linear-gradient(135deg, rgba(245,158,11,0.25), rgba(245,158,11,0.15));
-      color: #fcd34d;
-      border: 1px solid rgba(245,158,11,0.4);
+      color: #fcd34d; border: 1px solid rgba(245,158,11,0.4);
       box-shadow: 0 0 15px rgba(245,158,11,0.25);
     }
     .card-tag.汇总 {
       background: linear-gradient(135deg, rgba(139,92,246,0.25), rgba(139,92,246,0.15));
-      color: #c4b5fd;
-      border: 1px solid rgba(139,92,246,0.4);
+      color: #c4b5fd; border: 1px solid rgba(139,92,246,0.4);
       box-shadow: 0 0 15px rgba(139,92,246,0.25);
     }
-
     .card-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      line-height: 1.45;
+      font-size: 1.15rem; font-weight: 700; line-height: 1.45;
       word-break: break-all;
       background: linear-gradient(135deg, #fff, #e0e7ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       transition: transform 0.3s;
     }
-    .card:hover .card-title {
-      transform: translateX(4px);
-    }
-
+    .card:hover .card-title { transform: translateX(4px); }
     .card-meta {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.85);
-      margin-top: auto;
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.9rem; color: rgba(255,255,255,0.85); margin-top: auto;
     }
-
     .card-count {
-      background: rgba(255,255,255,0.15);
-      padding: 4px 12px;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      border: 1px solid rgba(255,255,255,0.2);
-      transition: all 0.3s;
+      background: rgba(255,255,255,0.15); padding: 4px 12px;
+      border-radius: 10px; font-weight: 600; font-size: 0.85rem;
+      border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s;
     }
     .card:hover .card-count {
-      background: rgba(165,180,252,0.3);
-      border-color: rgba(165,180,252,0.6);
+      background: rgba(165,180,252,0.3); border-color: rgba(165,180,252,0.6);
     }
-
     .card-arrow {
-      margin-left: auto;
-      font-size: 1.2rem;
-      opacity: 0.7;
+      margin-left: auto; font-size: 1.2rem; opacity: 0.7;
       transition: transform 0.3s, opacity 0.3s;
     }
-    .card:hover .card-arrow {
-      transform: translateX(5px);
-      opacity: 1;
-    }
+    .card:hover .card-arrow { transform: translateX(5px); opacity: 1; }
 
+    /* 🔹 页脚 */
     .footer {
-      text-align: center;
-      padding: 35px 20px 50px;
-      position: relative;
+      text-align: center; padding: 35px 20px 50px; position: relative;
     }
-
     .footer-contact {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--glass-bg);
-      backdrop-filter: blur(12px);
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--glass-bg); backdrop-filter: blur(12px);
       border: 1px solid var(--glass-border);
-      padding: 12px 28px;
-      border-radius: 14px;
-      margin-bottom: 16px;
-      font-size: 0.95rem;
-      animation: fadeIn 0.6s ease-out 1s both;
+      padding: 12px 28px; border-radius: 14px;
+      margin: 0 auto 16px;  /* 🔹 居中 */
+      font-size: 0.95rem; animation: fadeIn 0.6s ease-out 1s both;
     }
-
     .footer .team-sign {
-      font-weight: 700;
-      font-size: 1.15rem;
+      font-weight: 700; font-size: 1.15rem;
       background: linear-gradient(90deg, #fff, #c7d2fe);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 10px;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin: 0 auto 10px;  /* 🔹 居中 */
       animation: fadeIn 0.6s ease-out 1.2s both;
     }
-
     .footer .copyright {
-      opacity: 0.75;
-      font-size: 0.85rem;
+      opacity: 0.75; font-size: 0.85rem;
       animation: fadeIn 0.6s ease-out 1.4s both;
     }
 
+    /* 🔹 响应式 */
     @media (max-width: 768px) {
-      .logo-wrapper { padding: 15px 20px; }
-      .logo-wrapper img { height: 200px; }
+      .header .logo { max-height: 200px; }
       .card-grid { grid-template-columns: 1fr; }
       .card { max-width: 420px; margin: 0 auto; }
       .filter-tabs { gap: 8px; }
       .filter-btn { padding: 8px 18px; font-size: 0.9rem; }
     }
-
     @media (max-width: 480px) {
-      .logo-wrapper img { height: 160px; }
+      .header .logo { max-height: 160px; }
       .card { padding: 18px 16px; }
       .card-title { font-size: 1.05rem; }
     }
@@ -418,8 +297,7 @@
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
     ::-webkit-scrollbar-thumb { 
-      background: linear-gradient(180deg, #667eea, #764ba2);
-      border-radius: 4px;
+      background: linear-gradient(180deg, #667eea, #764ba2); border-radius: 4px;
     }
     ::-webkit-scrollbar-thumb:hover { 
       background: linear-gradient(180deg, #5a67d8, #6b46c1);
@@ -433,12 +311,12 @@
   <div class="glow-orb"></div>
 
   <div class="container">
-    <!-- 🔹 简化 Header：仅大尺寸 Logo + 团队徽章 -->
+    <!-- 🔹 简化 Header：无外框 Logo + 居中徽章 -->
     <header class="header">
-      <div class="logo-wrapper">
-        <img src="./Ping_An_Chinese_Logo.png" alt="中国平安" />
-      </div>
+      <!-- 🔹 Logo：无外框 / max-height:250px / 居中 -->
+      <img class="logo" src="./Ping_An_Chinese_Logo.png" alt="中国平安" />
       
+      <!-- 🔹 团队徽章：居中 -->
       <div class="team-badge">
         <span>🛡️</span>
         <span>重庆平安 · 张勇团队专属服务</span>
@@ -461,7 +339,7 @@
       </button>
     </div>
 
-    <!-- 🔹 毛玻璃卡片网格 -->
+    <!-- 🔹 卡片网格 -->
     <div class="card-grid" id="cardGrid">
       <!-- 汇总 -->
       <a class="card" data-category="汇总" href="https://www.galdweb.cloud/pingan/科技-主城区_汇总统计.txt" target="_blank">
@@ -473,7 +351,6 @@
           <span class="card-arrow">↗</span>
         </div>
       </a>
-
       <a class="card" data-category="汇总" href="https://www.galdweb.cloud/pingan/装饰-主城区_汇总统计.txt" target="_blank">
         <span class="card-tag 汇总">📊 汇总统计</span>
         <div class="card-title">装饰 · 主城区全量汇总</div>
@@ -483,7 +360,6 @@
           <span class="card-arrow">↗</span>
         </div>
       </a>
-
       <!-- 科技 -->
       <a class="card" data-category="科技" href="https://www.galdweb.cloud/pingan/科技-大渡口区(97).txt" target="_blank">
         <span class="card-tag 科技">🔬 科技</span>
@@ -494,7 +370,6 @@
           <span class="card-arrow">↗</span>
         </div>
       </a>
-
       <a class="card" data-category="科技" href="https://www.galdweb.cloud/pingan/科技-渝中区(330).txt" target="_blank">
         <span class="card-tag 科技">🔬 科技</span>
         <div class="card-title">科技 · 渝中区</div>
@@ -504,7 +379,6 @@
           <span class="card-arrow">↗</span>
         </div>
       </a>
-
       <a class="card" data-category="科技" href="https://www.galdweb.cloud/pingan/科技-九龙坡区(643).txt" target="_blank">
         <span class="card-tag 科技">🔬 科技</span>
         <div class="card-title">科技 · 九龙坡区</div>
@@ -514,7 +388,6 @@
           <span class="card-arrow">↗</span>
         </div>
       </a>
-
       <a class="card" data-category="科技" href="https://www.galdweb.cloud/pingan/科技-巴南区(210).txt" target="_blank">
         <span class="card-tag 科技">🔬 科技</span>
         <div class="card-title">科技 · 巴南区</div>
@@ -524,7 +397,6 @@
           <span class="card-arrow">↗</span>
         </div>
       </a>
-
       <a class="card" data-category="科技" href="https://www.galdweb.cloud/pingan/科技-渝北区(445).txt" target="_blank">
         <span class="card-tag 科技">🔬 科技</span>
         <div class="card-title">科技 · 渝北区</div>
@@ -534,7 +406,6 @@
           <span class="card-arrow">↗</span>
         </div>
       </a>
-
       <a class="card" data-category="科技" href="https://www.galdweb.cloud/pingan/科技-北碚区(114).txt" target="_blank">
         <span class="card-tag 科技">🔬 科技</span>
         <div class="card-title">科技 · 北碚区</div>
@@ -544,7 +415,6 @@
           <span class="card-arrow">↗</span>
         </div>
       </a>
-
       <a class="card" data-category="科技" href="https://www.galdweb.cloud/pingan/科技-江北区(416).txt" target="_blank">
         <span class="card-tag 科技">🔬 科技</span>
         <div class="card-title">科技 · 江北区</div>
@@ -554,7 +424,6 @@
           <span class="card-arrow">↗</span>
         </div>
       </a>
-
       <a class="card" data-category="科技" href="https://www.galdweb.cloud/pingan/科技-南岸区(345).txt" target="_blank">
         <span class="card-tag 科技">🔬 科技</span>
         <div class="card-title">科技 · 南岸区</div>
@@ -564,7 +433,6 @@
           <span class="card-arrow">↗</span>
         </div>
       </a>
-
       <a class="card" data-category="科技" href="https://www.galdweb.cloud/pingan/科技-沙坪坝区(314).txt" target="_blank">
         <span class="card-tag 科技">🔬 科技</span>
         <div class="card-title">科技 · 沙坪坝区</div>
@@ -574,7 +442,6 @@
           <span class="card-arrow">↗</span>
         </div>
       </a>
-
       <!-- 装饰 -->
       <a class="card" data-category="装饰" href="https://www.galdweb.cloud/pingan/装饰-北碚区(140).txt" target="_blank">
         <span class="card-tag 装饰">🎨 装饰</span>
@@ -585,7 +452,6 @@
           <span class="card-arrow">↗</span>
         </div>
       </a>
-
       <a class="card" data-category="装饰" href="https://www.galdweb.cloud/pingan/装饰-江北区(301).txt" target="_blank">
         <span class="card-tag 装饰">🎨 装饰</span>
         <div class="card-title">装饰 · 江北区</div>
@@ -595,7 +461,6 @@
           <span class="card-arrow">↗</span>
         </div>
       </a>
-
       <a class="card" data-category="装饰" href="https://www.galdweb.cloud/pingan/装饰-南岸区(307).txt" target="_blank">
         <span class="card-tag 装饰">🎨 装饰</span>
         <div class="card-title">装饰 · 南岸区</div>
@@ -605,7 +470,6 @@
           <span class="card-arrow">↗</span>
         </div>
       </a>
-
       <a class="card" data-category="装饰" href="https://www.galdweb.cloud/pingan/装饰-沙坪坝区(309).txt" target="_blank">
         <span class="card-tag 装饰">🎨 装饰</span>
         <div class="card-title">装饰 · 沙坪坝区</div>
@@ -615,7 +479,6 @@
           <span class="card-arrow">↗</span>
         </div>
       </a>
-
       <a class="card" data-category="装饰" href="https://www.galdweb.cloud/pingan/装饰-大渡口区(99).txt" target="_blank">
         <span class="card-tag 装饰">🎨 装饰</span>
         <div class="card-title">装饰 · 大渡口区</div>
@@ -625,7 +488,6 @@
           <span class="card-arrow">↗</span>
         </div>
       </a>
-
       <a class="card" data-category="装饰" href="https://www.galdweb.cloud/pingan/装饰-渝中区(155).txt" target="_blank">
         <span class="card-tag 装饰">🎨 装饰</span>
         <div class="card-title">装饰 · 渝中区</div>
@@ -635,7 +497,6 @@
           <span class="card-arrow">↗</span>
         </div>
       </a>
-
       <a class="card" data-category="装饰" href="https://www.galdweb.cloud/pingan/装饰-九龙坡区(458).txt" target="_blank">
         <span class="card-tag 装饰">🎨 装饰</span>
         <div class="card-title">装饰 · 九龙坡区</div>
@@ -645,7 +506,6 @@
           <span class="card-arrow">↗</span>
         </div>
       </a>
-
       <a class="card" data-category="装饰" href="https://www.galdweb.cloud/pingan/装饰-巴南区(274).txt" target="_blank">
         <span class="card-tag 装饰">🎨 装饰</span>
         <div class="card-title">装饰 · 巴南区</div>
@@ -655,7 +515,6 @@
           <span class="card-arrow">↗</span>
         </div>
       </a>
-
       <a class="card" data-category="装饰" href="https://www.galdweb.cloud/pingan/装饰-渝北区(353).txt" target="_blank">
         <span class="card-tag 装饰">🎨 装饰</span>
         <div class="card-title">装饰 · 渝北区</div>
@@ -684,27 +543,20 @@
       btn.addEventListener('click', function() {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
-        
         const filter = this.dataset.filter;
         const cards = document.querySelectorAll('.card');
-        
         cards.forEach((card, index) => {
           const category = card.dataset.category;
           if (filter === 'all' || category === filter) {
             card.style.display = 'flex';
-            setTimeout(() => {
-              card.style.opacity = '1';
-              card.style.transform = 'scale(1) translateY(0)';
-            }, index * 50);
+            setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'scale(1) translateY(0)'; }, index * 50);
           } else {
-            card.style.opacity = '0';
-            card.style.transform = 'scale(0.95) translateY(10px)';
+            card.style.opacity = '0'; card.style.transform = 'scale(0.95) translateY(10px)';
             setTimeout(() => { card.style.display = 'none'; }, 300);
           }
         });
       });
     });
-
     // 点击波纹
     document.querySelectorAll('.card').forEach(card => {
       card.addEventListener('click', function(e) {
@@ -718,11 +570,9 @@
         setTimeout(() => ripple.remove(), 600);
       });
     });
-
     const style = document.createElement('style');
     style.textContent = `@keyframes ripple { to { transform:scale(4); opacity:0; } }`;
     document.head.appendChild(style);
-
     // 滚动渐入
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
