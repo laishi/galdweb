@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>重庆企业数据下载</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 20px;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .header {
+      text-align: center;
+      color: #fff;
+      padding: 30px 20px;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .header p {
+      opacity: 0.9;
+      font-size: 0.95rem;
+    }
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+    .stat-badge {
+      background: rgba(255,255,255,0.2);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: #fff;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 18px;
+      text-decoration: none;
+      color: #333;
+      display: block;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #eee;
+    }
+    .tag {
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    .tag.科技 { background: #e3f2fd; color: #1976d2; }
+    .tag.装饰 { background: #fff3e0; color: #ef6c00; }
+    .region {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #222;
+    }
+    .count {
+      margin-left: auto;
+      background: #f5f5f5;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      color: #666;
+    }
+    .card-body {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.6;
+    }
+    .card-body div {
+      margin: 4px 0;
+    }
+    .card-footer {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed #eee;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: #888;
+    }
+    .download-icon {
+      color: #667eea;
+      font-weight: 500;
+    }
+    .footer {
+      text-align: center;
+      color: rgba(255,255,255,0.8);
+      padding: 20px;
+      font-size: 0.9rem;
+      margin-top: 30px;
+    }
+    .footer a {
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px dashed;
+    }
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+      .header h1 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 头部 -->
+    <div class="header">
+      <h1>📁 重庆企业数据下载中心</h1>
+      <p>主城区装饰/科技企业名单（含手机号）</p>
+      <div class="stats">
+        <span class="stat-badge">📊 共 20 个文件</span>
+        <span class="stat-badge">🏙️ 9 个主城区</span>
+        <span class="stat-badge">📱 已筛选手机号</span>
+      </div>
+    </div>
+
+    <!-- 卡片网格 -->
+    <div class="grid">
+
+      <!-- 科技-汇总 -->
+      <a class="card" href="https://www.galdweb.cloud/gs/科技 - 主城区_汇总统计.txt" target="_blank">
+        <div class="card-header">
+          <span class="tag 科技">科技</span>
+          <span class="region">主城区_汇总统计</span>
+        </div>
+        <div class="card-body">
+          <div>📋 包含 9 个区域统计数据</div>
+          <div>📁 格式：TXT 纯文本</div>
+        </div>
+        <div class="card-footer">
+          <span>点击查看汇总</span>
+          <span class="download-icon">↗</span>
+        </div>
+      </a>
+
+      <!-- 科技 - 大渡口区 -->
+      <a class="card" href="https://www.galdweb.cloud/gs/科技 - 大渡口区 (97).txt" target="_blank">
+        <div class="card-header">
+          <span class="tag 科技">科技</span>
+          <span class="region">大渡口区</span>
+          <span class="count">97 条</span>
+        </div>
+        <div class="card-body">
+          <div>🏢 科技企业名单</div>
+          <div>📱 已筛选 11 位手机号</div>
+        </div>
+        <div class="card-footer">
+          <span>下载数据</span>
+          <span class="download-icon">⬇</span>
+        </div>
+      </a>
+
+      <!-- 科技 - 渝中区 -->
+      <a class="card" href="https://www.galdweb.cloud/gs/科技 - 渝中区 (330).txt" target="_blank">
+        <div class="card-header">
+          <span class="tag 科技">科技</span>
+          <span class="region">渝中区</span>
+          <span class="count">330 条</span>
+        </div>
+        <div class="card-body">
+          <div>🏢 科技企业名单</div>
+          <div>📱 已筛选 11 位手机号</div>
+        </div>
+        <div class="card-footer">
+          <span>下载数据</span>
+          <span class="download-icon">⬇</span>
+        </div>
+      </a>
+
+      <!-- 装饰 - 北碚区 -->
+      <a class="card" href="https://www.galdweb.cloud/gs/装饰 - 北碚区 (140).txt" target="_blank">
+        <div class="card-header">
+          <span class="tag 装饰">装饰</span>
+          <span class="region">北碚区</span>
+          <span class="count">140 条</span>
+        </div>
+        <div class="card-body">
+          <div>🏠 装饰企业名单</div>
+          <div>📱 已筛选 11 位手机号</div>
+        </div>
+        <div class="card-footer">
+          <span>下载数据</span>
+          <span class="download-icon">⬇</span>
+        </div>
+      </a>
+
+      <!-- 装饰 - 江北区 -->
+      <a class="card" href="https://www.galdweb.cloud/gs/装饰 - 江北区 (301).txt" target="_blank">
+        <div class="card-header">
+          <span class="tag 装饰">装饰</span>
+          <span class="region">江北区</span>
+          <span class="count">301 条</span>
+        </div>
+        <div class="card-body">
+          <div>🏠 装饰企业名单</div>
+          <div>📱 已筛选 11 位手机号</div>
+        </div>
+        <div class="card-footer">
+          <span>下载数据</span>
+          <span class="download-icon">⬇</span>
+        </div>
+      </a>
+
+      <!-- 科技 - 九龙坡区 -->
+      <a class="card" href="https://www.galdweb.cloud/gs/科技 - 九龙坡区 (643).txt" target="_blank">
+        <div class="card-header">
+          <span class="tag 科技">科技</span>
+          <span class="region">九龙坡区</span>
+          <span class="count">643 条</span>
+        </div>
+        <div class="card-body">
+          <div>🏢 科技企业名单</div>
+          <div>📱 已筛选 11 位手机号</div>
+        </div>
+        <div class="card-footer">
+          <span>下载数据</span>
+          <span class="download-icon">⬇</span>
+        </div>
+      </a>
+
+      <!-- 科技 - 巴南区 -->
+      <a class="card" href="https://www.galdweb.cloud/gs/科技 - 巴南区 (210).txt" target="_blank">
+        <div class="card-header">
+          <span class="tag 科技">科技</span>
+          <span class="region">巴南区</span>
+          <span class="count">210 条</span>
+        </div>
+        <div class="card-body">
+          <div>🏢 科技企业名单</div>
+          <div>📱 已筛选 11 位手机号</div>
+        </div>
+        <div class="card-footer">
+          <span>下载数据</span>
+          <span class="download-icon">⬇</span>
+        </div>
+      </a>
+
+      <!-- 科技 - 渝北区 -->
+      <a class="card" href="https://www.galdweb.cloud/gs/科技 - 渝北区 (445).txt" target="_blank">
+        <div class="card-header">
+          <span class="tag 科技">科技</span>
+          <span class="region">渝北区</span>
+          <span class="count">445 条</span>
+        </div>
+        <div class="card-body">
+          <div>🏢 科技企业名单</div>
+          <div>📱 已筛选 11 位手机号</div>
+        </div>
+        <div class="card-footer">
+          <span>下载数据</span>
+          <span class="download-icon">⬇</span>
+        </div>
+      </a>
+
+      <!-- 装饰 - 南岸区 -->
+      <a class="card" href="https://www.galdweb.cloud/gs/装饰 - 南岸区 (307).txt" target="_blank">
+        <div class="card-header">
+          <span class="tag 装饰">装饰</span>
+          <span class="region">南岸区</span>
+          <span class="count">307 条</span>
+        </div>
+        <div class="card-body">
+          <div>🏠 装饰企业名单</div>
+          <div>📱 已筛选 11 位手机号</div>
+        </div>
+        <div class="card-footer">
+          <span>下载数据</span>
+          <span class="download-icon">⬇</span>
+        </div>
+      </a>
+
+      <!-- 装饰 - 沙坪坝区 -->
+      <a class="card" href="https://www.galdweb.cloud/gs/装饰 - 沙坪坝区 (309).txt" target="_blank">
+        <div class="card-header">
+          <span class="tag 装饰">装饰</span>
+          <span class="region">沙坪坝区</span>
+          <span class="count">309 条</span>
+        </div>
+        <div class="card-body">
+          <div>🏠 装饰企业名单</div>
+          <div>📱 已筛选 11 位手机号</div>
+        </div>
+        <div class="card-footer">
+          <span>下载数据</span>
+          <span class="download-icon">⬇</span>
+        </div>
+      </a>
+
+      <!-- 科技 - 北碚区 -->
+      <a class="card" href="https://www.galdweb.cloud/gs/科技 - 北碚区 (114).txt" target="_blank">
+        <div class="card-header">
+          <span class="tag 科技">科技</span>
+          <span class="region">北碚区</span>
+          <span class="count">114 条</span>
+        </div>
+        <div class="card-body">
+          <div>🏢 科技企业名单</div>
+          <div>📱 已筛选 11 位手机号</div>
+        </div>
+        <div class="card-footer">
+          <span>下载数据</span>
+          <span class="download-icon">⬇</span>
+        </div>
+      </a>
+
+      <!-- 科技 - 江北区 -->
+      <a class="card" href="https://www.galdweb.cloud/gs/科技 - 江北区 (416).txt" target="_blank">
+        <div class="card-header">
+          <span class="tag 科技">科技</span>
+          <span class="region">江北区</span>
+          <span class="count">416 条</span>
+        </div>
+        <div class="card-body">
+          <div>🏢 科技企业名单</div>
+          <div>📱 已筛选 11 位手机号</div>
+        </div>
+        <div class="card-footer">
+          <span>下载数据</span>
+          <span class="download-icon">⬇</span>
+        </div>
+      </a>
+
+      <!-- 装饰 - 汇总 -->
+      <a class="card" href="https://www.galdweb.cloud/gs/装饰 - 主城区_汇总统计.txt" target="_blank">
+        <div class="card-header">
+          <span class="tag 装饰">装饰</span>
+          <span class="region">主城区_汇总统计</span>
+        </div>
+        <div class="card-body">
+          <div>📋 包含 9 个区域统计数据</div>
+          <div>📁 格式：TXT 纯文本</div>
+        </div>
+        <div class="card-footer">
+          <span>点击查看汇总</span>
+          <span class="download-icon">↗</span>
+        </div>
+      </a>
+
+     
