@@ -30,7 +30,6 @@
       position: relative;
     }
 
-    /* 🌊 动态背景粒子 */
     .bg-particles {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -55,7 +54,6 @@
       100% { transform: translateY(-200px); }
     }
 
-    /* ✨ 光晕装饰 */
     .glow-orb {
       position: fixed;
       width: 600px; height: 600px;
@@ -91,7 +89,6 @@
       padding: 20px;
     }
 
-    /* 🎨 炫酷 Header */
     .header {
       text-align: center;
       padding: 40px 20px 50px;
@@ -126,7 +123,8 @@
     .logo-wrapper img {
       height: 42px;
       width: auto;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+      display: block;
+      border-radius: 4px;
     }
 
     .logo-text {
@@ -195,7 +193,6 @@
       to { opacity: 1; }
     }
 
-    /* 🔍 分类筛选 Tab */
     .filter-tabs {
       display: flex;
       justify-content: center;
@@ -244,7 +241,6 @@
     .filter-btn[data-filter="装饰"] { color: var(--decor-color); }
     .filter-btn[data-filter="汇总"] { color: var(--summary-color); }
 
-    /* 🧊 毛玻璃卡片网格 */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
@@ -404,7 +400,6 @@
       opacity: 1;
     }
 
-    /* 📊 页脚 */
     .footer {
       text-align: center;
       padding: 35px 20px 50px;
@@ -441,7 +436,6 @@
       animation: fadeIn 0.6s ease-out 1.4s both;
     }
 
-    /* 📱 响应式适配 */
     @media (max-width: 768px) {
       .header h1 { font-size: 1.8rem; }
       .header .subtitle { font-size: 1rem; }
@@ -460,7 +454,6 @@
       .card-title { font-size: 1.05rem; }
     }
 
-    /* ✨ 滚动条美化 */
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
     ::-webkit-scrollbar-thumb { 
@@ -473,17 +466,16 @@
   </style>
 </head>
 <body>
-  <!-- 🌌 背景特效 -->
   <div class="bg-particles"></div>
   <div class="glow-orb"></div>
   <div class="glow-orb"></div>
   <div class="glow-orb"></div>
 
   <div class="container">
-    <!-- 🎨 炫酷 Header -->
     <header class="header">
+      <!-- 🔹 本地 Logo -->
       <div class="logo-wrapper">
-        <img src="//pa18-pweb.pingan.com/upload/chnapp/pc/uploads/img/category/2024/04/19/17135084414568.gif" alt="中国平安" />
+        <img src="./Ping_An_Chinese_Logo.png" alt="中国平安" />
         <span class="logo-text">中国平安</span>
       </div>
       
@@ -495,7 +487,6 @@
       </div>
     </header>
 
-    <!-- 🔍 分类筛选 -->
     <div class="filter-tabs">
       <button class="filter-btn active" data-filter="all">
         <span class="dot"></span> 全部
@@ -511,10 +502,9 @@
       </button>
     </div>
 
-    <!-- 🧊 毛玻璃卡片网格 -->
     <div class="card-grid" id="cardGrid">
       <!-- 汇总 -->
-      <a class="card" data-category="汇总" href="https://www.galdweb.cloud/gs/科技-主城区_汇总统计.txt" target="_blank">
+      <a class="card" data-category="汇总" href="https://www.galdweb.cloud/pingan/科技-主城区_汇总统计.txt" target="_blank">
         <span class="card-tag 汇总">📊 汇总统计</span>
         <div class="card-title">科技 · 主城区全量汇总</div>
         <div class="card-meta">
@@ -524,7 +514,7 @@
         </div>
       </a>
 
-      <a class="card" data-category="汇总" href="https://www.galdweb.cloud/gs/装饰-主城区_汇总统计.txt" target="_blank">
+      <a class="card" data-category="汇总" href="https://www.galdweb.cloud/pingan/装饰-主城区_汇总统计.txt" target="_blank">
         <span class="card-tag 汇总">📊 汇总统计</span>
         <div class="card-title">装饰 · 主城区全量汇总</div>
         <div class="card-meta">
@@ -535,7 +525,7 @@
       </a>
 
       <!-- 科技 -->
-      <a class="card" data-category="科技" href="https://www.galdweb.cloud/gs/科技-大渡口区(97).txt" target="_blank">
+      <a class="card" data-category="科技" href="https://www.galdweb.cloud/pingan/科技-大渡口区(97).txt" target="_blank">
         <span class="card-tag 科技">🔬 科技</span>
         <div class="card-title">科技 · 大渡口区</div>
         <div class="card-meta">
@@ -545,7 +535,7 @@
         </div>
       </a>
 
-      <a class="card" data-category="科技" href="https://www.galdweb.cloud/gs/科技-渝中区(330).txt" target="_blank">
+      <a class="card" data-category="科技" href="https://www.galdweb.cloud/pingan/科技-渝中区(330).txt" target="_blank">
         <span class="card-tag 科技">🔬 科技</span>
         <div class="card-title">科技 · 渝中区</div>
         <div class="card-meta">
@@ -555,7 +545,7 @@
         </div>
       </a>
 
-      <a class="card" data-category="科技" href="https://www.galdweb.cloud/gs/科技-九龙坡区(643).txt" target="_blank">
+      <a class="card" data-category="科技" href="https://www.galdweb.cloud/pingan/科技-九龙坡区(643).txt" target="_blank">
         <span class="card-tag 科技">🔬 科技</span>
         <div class="card-title">科技 · 九龙坡区</div>
         <div class="card-meta">
@@ -565,7 +555,7 @@
         </div>
       </a>
 
-      <a class="card" data-category="科技" href="https://www.galdweb.cloud/gs/科技-巴南区(210).txt" target="_blank">
+      <a class="card" data-category="科技" href="https://www.galdweb.cloud/pingan/科技-巴南区(210).txt" target="_blank">
         <span class="card-tag 科技">🔬 科技</span>
         <div class="card-title">科技 · 巴南区</div>
         <div class="card-meta">
@@ -575,7 +565,7 @@
         </div>
       </a>
 
-      <a class="card" data-category="科技" href="https://www.galdweb.cloud/gs/科技-渝北区(445).txt" target="_blank">
+      <a class="card" data-category="科技" href="https://www.galdweb.cloud/pingan/科技-渝北区(445).txt" target="_blank">
         <span class="card-tag 科技">🔬 科技</span>
         <div class="card-title">科技 · 渝北区</div>
         <div class="card-meta">
@@ -585,7 +575,7 @@
         </div>
       </a>
 
-      <a class="card" data-category="科技" href="https://www.galdweb.cloud/gs/科技-北碚区(114).txt" target="_blank">
+      <a class="card" data-category="科技" href="https://www.galdweb.cloud/pingan/科技-北碚区(114).txt" target="_blank">
         <span class="card-tag 科技">🔬 科技</span>
         <div class="card-title">科技 · 北碚区</div>
         <div class="card-meta">
@@ -595,7 +585,7 @@
         </div>
       </a>
 
-      <a class="card" data-category="科技" href="https://www.galdweb.cloud/gs/科技-江北区(416).txt" target="_blank">
+      <a class="card" data-category="科技" href="https://www.galdweb.cloud/pingan/科技-江北区(416).txt" target="_blank">
         <span class="card-tag 科技">🔬 科技</span>
         <div class="card-title">科技 · 江北区</div>
         <div class="card-meta">
@@ -605,7 +595,7 @@
         </div>
       </a>
 
-      <a class="card" data-category="科技" href="https://www.galdweb.cloud/gs/科技-南岸区(345).txt" target="_blank">
+      <a class="card" data-category="科技" href="https://www.galdweb.cloud/pingan/科技-南岸区(345).txt" target="_blank">
         <span class="card-tag 科技">🔬 科技</span>
         <div class="card-title">科技 · 南岸区</div>
         <div class="card-meta">
@@ -615,7 +605,7 @@
         </div>
       </a>
 
-      <a class="card" data-category="科技" href="https://www.galdweb.cloud/gs/科技-沙坪坝区(314).txt" target="_blank">
+      <a class="card" data-category="科技" href="https://www.galdweb.cloud/pingan/科技-沙坪坝区(314).txt" target="_blank">
         <span class="card-tag 科技">🔬 科技</span>
         <div class="card-title">科技 · 沙坪坝区</div>
         <div class="card-meta">
@@ -626,7 +616,7 @@
       </a>
 
       <!-- 装饰 -->
-      <a class="card" data-category="装饰" href="https://www.galdweb.cloud/gs/装饰-北碚区(140).txt" target="_blank">
+      <a class="card" data-category="装饰" href="https://www.galdweb.cloud/pingan/装饰-北碚区(140).txt" target="_blank">
         <span class="card-tag 装饰">🎨 装饰</span>
         <div class="card-title">装饰 · 北碚区</div>
         <div class="card-meta">
@@ -636,7 +626,7 @@
         </div>
       </a>
 
-      <a class="card" data-category="装饰" href="https://www.galdweb.cloud/gs/装饰-江北区(301).txt" target="_blank">
+      <a class="card" data-category="装饰" href="https://www.galdweb.cloud/pingan/装饰-江北区(301).txt" target="_blank">
         <span class="card-tag 装饰">🎨 装饰</span>
         <div class="card-title">装饰 · 江北区</div>
         <div class="card-meta">
@@ -646,7 +636,7 @@
         </div>
       </a>
 
-      <a class="card" data-category="装饰" href="https://www.galdweb.cloud/gs/装饰-南岸区(307).txt" target="_blank">
+      <a class="card" data-category="装饰" href="https://www.galdweb.cloud/pingan/装饰-南岸区(307).txt" target="_blank">
         <span class="card-tag 装饰">🎨 装饰</span>
         <div class="card-title">装饰 · 南岸区</div>
         <div class="card-meta">
@@ -656,7 +646,7 @@
         </div>
       </a>
 
-      <a class="card" data-category="装饰" href="https://www.galdweb.cloud/gs/装饰-沙坪坝区(309).txt" target="_blank">
+      <a class="card" data-category="装饰" href="https://www.galdweb.cloud/pingan/装饰-沙坪坝区(309).txt" target="_blank">
         <span class="card-tag 装饰">🎨 装饰</span>
         <div class="card-title">装饰 · 沙坪坝区</div>
         <div class="card-meta">
@@ -666,7 +656,7 @@
         </div>
       </a>
 
-      <a class="card" data-category="装饰" href="https://www.galdweb.cloud/gs/装饰-大渡口区(99).txt" target="_blank">
+      <a class="card" data-category="装饰" href="https://www.galdweb.cloud/pingan/装饰-大渡口区(99).txt" target="_blank">
         <span class="card-tag 装饰">🎨 装饰</span>
         <div class="card-title">装饰 · 大渡口区</div>
         <div class="card-meta">
@@ -676,7 +666,7 @@
         </div>
       </a>
 
-      <a class="card" data-category="装饰" href="https://www.galdweb.cloud/gs/装饰-渝中区(155).txt" target="_blank">
+      <a class="card" data-category="装饰" href="https://www.galdweb.cloud/pingan/装饰-渝中区(155).txt" target="_blank">
         <span class="card-tag 装饰">🎨 装饰</span>
         <div class="card-title">装饰 · 渝中区</div>
         <div class="card-meta">
@@ -686,7 +676,7 @@
         </div>
       </a>
 
-      <a class="card" data-category="装饰" href="https://www.galdweb.cloud/gs/装饰-九龙坡区(458).txt" target="_blank">
+      <a class="card" data-category="装饰" href="https://www.galdweb.cloud/pingan/装饰-九龙坡区(458).txt" target="_blank">
         <span class="card-tag 装饰">🎨 装饰</span>
         <div class="card-title">装饰 · 九龙坡区</div>
         <div class="card-meta">
@@ -696,7 +686,7 @@
         </div>
       </a>
 
-      <a class="card" data-category="装饰" href="https://www.galdweb.cloud/gs/装饰-巴南区(274).txt" target="_blank">
+      <a class="card" data-category="装饰" href="https://www.galdweb.cloud/pingan/装饰-巴南区(274).txt" target="_blank">
         <span class="card-tag 装饰">🎨 装饰</span>
         <div class="card-title">装饰 · 巴南区</div>
         <div class="card-meta">
@@ -706,7 +696,7 @@
         </div>
       </a>
 
-      <a class="card" data-category="装饰" href="https://www.galdweb.cloud/gs/装饰-渝北区(353).txt" target="_blank">
+      <a class="card" data-category="装饰" href="https://www.galdweb.cloud/pingan/装饰-渝北区(353).txt" target="_blank">
         <span class="card-tag 装饰">🎨 装饰</span>
         <div class="card-title">装饰 · 渝北区</div>
         <div class="card-meta">
@@ -717,7 +707,6 @@
       </a>
     </div>
 
-    <!-- 📊 页脚 -->
     <footer class="footer">
       <div class="footer-contact">
         <span>📞</span>
@@ -728,25 +717,21 @@
     </footer>
   </div>
 
-  <!-- 🎯 交互脚本 -->
   <script>
     // 分类筛选功能
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', function() {
-        // 激活状态切换
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
         
         const filter = this.dataset.filter;
         const cards = document.querySelectorAll('.card');
         
-        // 筛选动画
         cards.forEach((card, index) => {
           const category = card.dataset.category;
           
           if (filter === 'all' || category === filter) {
             card.style.display = 'flex';
-            // 重新触发动画
             setTimeout(() => {
               card.style.opacity = '1';
               card.style.transform = 'scale(1) translateY(0)';
@@ -789,19 +774,15 @@
       });
     });
 
-    // 添加 ripple 动画
     const style = document.createElement('style');
     style.textContent = `
       @keyframes ripple {
-        to {
-          transform: scale(4);
-          opacity: 0;
-        }
+        to { transform: scale(4); opacity: 0; }
       }
     `;
     document.head.appendChild(style);
 
-    // 滚动时卡片渐入
+    // 滚动渐入
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
